@@ -1,0 +1,10 @@
+.title {
+  color: #f0f;
+  font-size: 30px;
+  background-color: #000;
+}
+
+.title span {
+  color: #ff0;
+}
+
