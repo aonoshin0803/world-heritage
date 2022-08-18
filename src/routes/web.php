@@ -13,10 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/top', function() {
+Route::get('/', function() {
     return view('top');
+});
+
+Route::group(
+    [
+        'prefix' => 'posts',
+        'as' => 'posts.',
+        'where' => ['user_id' => '[0-9]+', 'post_id' => '[0-9]+']
+    ],
+    function () {
+    Route::get('/', 'PostController@index')->name('index');
+    Route::get('/create', 'PostController@create')->name('create');
+    Route::get('/{post_id}', 'PostController@show')->name('show');
+    Route::get('/{post_id}/edit', 'PostController@edit')->name('edit');
 });

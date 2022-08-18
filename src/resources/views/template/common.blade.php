@@ -13,7 +13,6 @@
 <body>
     @yield('content')
     <footer>
-        <p class="target">青野</p>
         <ul>
             <li>© 2021 PCafe All Rights Reserved</li>
             <li><a href=""></a></li>
